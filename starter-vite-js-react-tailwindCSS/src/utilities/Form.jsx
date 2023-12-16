@@ -1,39 +1,60 @@
-//import "/src/styles/Register.css"
 import "/src/styles/Register.css";
-import axios from "axios";
+import "/src/styles/App.css";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+const Form = ({onSubmit, setOpenForm, register, handleSubmit, errors}) => {
+  
+    const handleCancelBtn = () => {
+        setOpenForm(false)
+        /* const elment = document.querySelector("#Formu")
+        elment.style.visibility = "hidden" */
+    }
 
-const Base_URL = "https://users-crud.academlo.tech";
-
-const Form = (handleCancelBtn) => {
-  const {
+    /* const {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
-  } = useForm();
-  const [users, setUsers] = useState([]);
+    } = useForm(); */
+  
 
-  const onSubmit = (data) => {
-    console.log(data);
-    axios
-      .post(Base_URL + "/users/", data)
-      .then(({ data: newUser }) => {
-        reset();
-        alert("user created");
-        setUsers([...users, newUser]);
-      })
-      .catch((error) => console.log(error));
-  };
+  {/*  const [Update, setUpdate] = useState(null)
+    const formRef = useForm(null);
+    console.log(formRef)
+
+
+   
+  
+    useEffect(() => {
+      if(Update!==null){
+        //?
+        formRef.current.first_name.value = setUpdate.first_name;
+        formRef.current.last_name.value = setUpdate.last_name;
+        formRef.current.email.value = setUpdate.email;
+        formRef.current.password.value = setUpdate.password;
+        formRef.current.birthday.value = setUpdate.birthday;
+      }
+    },[Update])
+
+   
+    const handleClickToUpdate = (user) => {
+      const elment = document.querySelector("#Form")
+      elment.style.visibility = "visible"
+      setUpdate(user)
+    }
+  */}
+
+  
   return (
-    <div className="Trasfondo">
-      <div className="Contenedor__Card">
+    <div id="Form">
+      <div className="Trasfondo">
+
+      {/*</div>*/}
+     <div className="Contenedor__Card">
         <div className="Head_Contenedor">
           <img className="Ellipse" src="/img/Ellipse 9.png" alt="" />
         </div>
-
+         {/*ref={formRef} */}
         <form
+         
           autoComplete="off"
           className="Body_Contenedor"
           onSubmit={handleSubmit(onSubmit)}
@@ -161,6 +182,8 @@ const Form = (handleCancelBtn) => {
         </form>
       </div>
     </div>
+    </div>
+    
   );
 };
 export default Form;

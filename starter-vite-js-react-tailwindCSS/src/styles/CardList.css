@@ -47,6 +47,7 @@ grid-template-areas:
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    z-index: 3;
 }
 .Btn:hover{
     background-color: #a1f9ba;;

@@ -8,19 +8,20 @@
     z-index: 2;
     top: 0;
     width: 100%;
-    visibility: block;
+    visibility: visible;
     left: 33.5%;
     top: 25%;
+   
 }
 
-#Form{
+#Formu{
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100vh;
-    z-index: 3;
-    visibility: hidden;
+    z-index: 4;
+    /* visibility: hidden; */
 }
 
 
@@ -30,5 +31,5 @@
     top: 0;
     width: 100%;
     height: 100vh;
-    visibility: hidden;
+    /* visibility:hidden; */
 }
